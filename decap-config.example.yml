@@ -1,0 +1,81 @@
+# DEVELOPER EXAMPLE ONLY — NOT AN ACTIVE CMS CONNECTION.
+# Fill in the final repository and configured OAuth provider. Do not add secrets here.
+backend:
+  name: github
+  repo: REPLACE_WITH_OWNER/REPLACE_WITH_REPOSITORY
+  branch: main
+  base_url: https://REPLACE-WITH-CONFIGURED-OAUTH-SERVICE.example
+  auth_endpoint: auth
+
+# If deploying a project-site subpath, verify relative media paths in the final CMS.
+media_folder: uploads
+public_folder: uploads
+
+collections:
+  - name: website
+    label: Website content
+    files:
+      - name: content
+        label: Company and product catalogue
+        file: content.json
+        format: json
+        fields:
+          - { label: Schema version, name: schemaVersion, widget: hidden, default: 2 }
+          - label: Company
+            name: company
+            widget: object
+            fields:
+              - { label: Legal company name, name: name, widget: string }
+              - { label: Short company name, name: shortName, widget: string }
+              - { label: Tagline, name: tagline, widget: string }
+              - { label: City / location, name: location, widget: string }
+              - { label: Business email, name: email, widget: string }
+              - { label: Business phone, name: phone, widget: string }
+              - { label: Office address, name: address, widget: text }
+              - { label: Opening statement, name: intro, widget: text }
+              - { label: Company overview, name: overview, widget: text }
+              - { label: Invitation, name: invitation, widget: text }
+              - { label: Logo, name: logo, widget: image, required: false }
+              - { label: Company document image, name: document, widget: image, required: false }
+              - { label: GSTIN, name: gst, widget: string, required: false }
+              - { label: Drug licences, name: drugLicences, widget: text, required: false }
+              - { label: FSSAI number, name: fssai, widget: string, required: false }
+              - { label: Schedule X licence, name: scheduleX, widget: string, required: false }
+          - label: Homepage
+            name: home
+            widget: object
+            fields:
+              - { label: Headline first line, name: title, widget: string }
+              - { label: Second line lead, name: lead, widget: string }
+              - { label: Highlighted word, name: emphasis, widget: string }
+              - { label: Introduction, name: description, widget: text }
+          - label: Products
+            name: products
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: Stable unique id, name: id, widget: string, pattern: ['^[a-z0-9][a-z0-9-]{0,63}$', 'Use lowercase letters, digits and hyphens; keep ids unique.'] }
+              - { label: Product name, name: name, widget: string }
+              - label: Category
+                name: category
+                widget: select
+                options:
+                  - { label: Gastrointestinal, value: gastro }
+                  - { label: Nutrition, value: nutrition }
+                  - { label: Injectables, value: injection }
+              - { label: Dosage form / label, name: form, widget: string }
+              - { label: Short description, name: summary, widget: text }
+              - { label: Confirmed composition, name: composition, widget: text }
+              - { label: Additional details, name: detail, widget: text }
+              - { label: Product image, name: image, widget: image, required: false }
+              - { label: Literature resource id, name: resource, widget: string, required: false, hint: 'Use an existing resource id from the Resources list; leave blank for none.' }
+              - { label: Feature on homepage, name: featured, widget: boolean, default: false }
+          - label: Resources
+            name: resources
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - { label: Stable unique id, name: id, widget: string, pattern: ['^[a-z0-9][a-z0-9-]{0,63}$', 'Use a unique lowercase id. The id range is reserved for the portfolio sheet.'] }
+              - { label: Resource name, name: name, widget: string }
+              - { label: Literature image, name: image, widget: image }
+              - { label: Flag low-resolution source, name: lowResolution, widget: boolean, default: false }

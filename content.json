@@ -11,8 +11,8 @@
     "intro": "A pharmaceutical company with a simple belief: care deserves a thoughtful approach.",
     "overview": "Based in Greater Noida, Uttar Pradesh, Dr. Nurture Pharmaceutical Pvt. Ltd. brings together a portfolio of pharmaceutical and nutritional formulations.",
     "invitation": "Explore the range, access product literature, or speak directly with our team for company and product enquiries.",
-    "logo": "assets/brand-logo.webp",
-    "document": "assets/company-details.jpg",
+    "logo": "brand-logo.webp",
+    "document": "company-details.jpg",
     "gst": "09AAJCD9715B1ZM",
     "drugLicences": "UP1620B000777\nUP1621B000768",
     "fssai": "22723441000512",
@@ -32,7 +32,7 @@
       "summary": "Esomeprazole 40 mg + Levosulpiride 75 mg",
       "composition": "Esomeprazole 40 mg + Levosulpiride 75 mg. The supplied pack identifies ER 40 mg + SR 75 mg.",
       "detail": "For current prescribing information, pack sizes, and product availability, please contact our team.",
-      "image": "assets/esulip-pack.webp",
+      "image": "esulip-pack.webp",
       "resource": "esulip",
       "featured": true,
       "id": "esulip"
@@ -56,7 +56,7 @@
       "summary": "Cefepime 1000 mg + Tazobactam 125 mg · 1.125 gm",
       "composition": "Cefepime 1000 mg + Tazobactam 125 mg.",
       "detail": "The supplied pack identifies 1.125 gm for I.M./I.V. use only. Contact our team for current prescribing information. Administration requires an appropriately qualified healthcare professional.",
-      "image": "assets/zeromiva-pack.webp",
+      "image": "zeromiva-pack.webp",
       "resource": "zeromiva",
       "featured": true,
       "id": "zeromiva"
@@ -114,31 +114,31 @@
     {
       "id": "esulip",
       "name": "ESULIP",
-      "image": "assets/esulip-literature.jpg",
+      "image": "esulip-literature.jpg",
       "lowResolution": false
     },
     {
       "id": "mactol",
       "name": "MACTOL CD3",
-      "image": "assets/mactol-literature.jpg",
+      "image": "mactol-literature.jpg",
       "lowResolution": false
     },
     {
       "id": "zeromiva",
       "name": "ZEROMIVA",
-      "image": "assets/zeromiva-literature.jpg",
+      "image": "zeromiva-literature.jpg",
       "lowResolution": false
     },
     {
       "id": "coenz",
       "name": "COENZ",
-      "image": "assets/coenz-literature.jpg",
+      "image": "coenz-literature.jpg",
       "lowResolution": true
     },
     {
       "id": "range",
       "name": "Dr. Nurture product range",
-      "image": "assets/product-range.jpg",
+      "image": "product-range.jpg",
       "lowResolution": true
     }
   ]

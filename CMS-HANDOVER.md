@@ -46,7 +46,7 @@ If the client changes products only occasionally, use the delivered draft editor
 - `content-data.js`: matching snapshot for offline viewing/fallback.
 - `PUBLISHING-INSTRUCTIONS.txt`: short handover instructions.
 
-When a connected CMS writes uploaded files to `assets/uploads/`, those must be committed alongside the JSON. The current browser editor embeds small raster images as data URLs; use proper media files for a larger production catalogue.
+When a connected CMS writes uploaded files to `uploads/`, those must be committed alongside the JSON. The current browser editor embeds small raster images as data URLs; use proper media files for a larger production catalogue.
 
 ## SEO and accessibility considerations
 

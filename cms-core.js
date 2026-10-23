@@ -6,8 +6,11 @@
   const asset = value => {
     if (!value) return '';
     const s = String(value);
-    if (/^assets\/[A-Za-z0-9_./-]+$/.test(s) && !s.split('/').includes('..')) return s;
     if (/^data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(s)) return s;
+    if (/^[A-Za-z0-9][A-Za-z0-9_./-]*\.(?:png|jpe?g|webp|avif|gif)$/i.test(s) && s.split('/').every(part => part && part !== '.' && part !== '..')) {
+      // Keep backups and existing browser drafts from the folder-based version usable.
+      return s.startsWith('assets/') ? s.slice(7) : s;
+    }
     return '';
   };
   const text = (value, name, max=12000) => { if (typeof value !== 'string' || value.length > max) throw new Error(`${name} must be text, up to ${max} characters.`); return value; };
